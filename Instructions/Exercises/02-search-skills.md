@@ -146,7 +146,7 @@ Pour implémenter la fonctionnalité de comptage de mots en tant que compétence
     - **Nom de l’application de fonction** : *Un nom unique*
     - **Publier** : Code
     - **Pile d’exécution** : Node.js
-    - **Version** : 14 LTS
+    - **Version** : 18 LTS
     - **Région** : * la même région que votre ressource Recherche Azure AI*
 
 2. Attendez la fin du déploiement, puis accédez à la ressource Function App déployée.
