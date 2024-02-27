@@ -167,8 +167,7 @@ Cet hôtel a correspondu au terme « lake » dans le champ `HotelName` et au t
 
 ### Tester l’index mis à jour
 
-1. En haut de la page, sélectionnez le service de recherche via le lien **advanced-search-service-12345 | Indexes**.
-1. Dans le volet **Vue d’ensemble**, sélectionnez **Index**, puis **hotels-sample-index**.
+1. Revenez à l’onglet **Explorateur de recherche** de la page **hotels-sample-index**.
 1. Dans **Chaîne de requête**, entrez la même recherche que précédemment :
 
     `lake + view&$select=HotelName,Description,Category,Tags&$count=true`

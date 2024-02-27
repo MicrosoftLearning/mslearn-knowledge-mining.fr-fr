@@ -39,14 +39,14 @@ Vous allez développer votre application de recherche en utilisant Visual Studio
 6. Cliquez avec le bouton droit sur le dossier **03-knowledge-store**, puis sélectionnez **Ouvrir dans le terminal intégré**.
 7. Dans le volet Terminal, entrez la commande suivante pour établir une connexion authentifiée à votre abonnement Azure.
 
-    ```
+    ```powershell
     az login --output none
     ```
 
 8. Lorsque vous y êtes invité, connectez-vous à votre abonnement Azure. Revenez ensuite à Visual Studio Code et attendez la fin du processus de connexion.
 9. Exécutez la commande suivante pour lister vos emplacements Azure.
 
-    ```
+    ```powershell
     az account list-locations -o table
     ```
 
@@ -54,8 +54,8 @@ Vous allez développer votre application de recherche en utilisant Visual Studio
 11. Dans le script **setup.cmd**, modifiez les déclarations de variables de **subscription_id**, **resource_group** et **location** avec les valeurs appropriées pour votre ID d’abonnement, le nom du groupe de ressources et le nom de l’emplacement. Ensuite, enregistrez vos modifications.
 12. Dans le terminal du dossier **03-knowledge-store**, entrez la commande suivante pour exécuter le script :
 
-    ```
-    setup
+    ```powershell
+    ./setup
     ```
     > **Remarque** : Le module CLI de recherche est en préversion et peut être bloqué dans le processus *- Exécution ..* processus d'exécution (…). Si cela se produit pendant plus de 2 minutes, appuyez sur Ctrl+C pour annuler l’opération de longue durée, puis sélectionnez **N** lorsque vous êtes invité à arrêter le script. Il devrait ensuite se terminer correctement.
     >
@@ -131,8 +131,8 @@ Maintenant que vous avez préparé les objets JSON qui définissent vos composan
 4. Cliquez avec le bouton droit de la souris sur le dossier **create-search**, puis sélectionnez **Ouvrir dans le terminal intégré**.
 5. Dans le volet terminal du dossier **create-search** , entrez la commande suivante pour exécuter le script de commandes.
 
-    ```
-    create-search
+    ```powershell
+    ./create-search
     ```
 
 6. Une fois le script terminé, dans le Portail Azure, sur la page de votre ressource Recherche Azure AI, sélectionnez la page **Indexeurs** et attendez que le processus d’indexation se termine.
@@ -151,11 +151,11 @@ Les projections d’*objets* définies dans l’ensemble de compétences de Marg
 
 1. Dans le Portail Azure, affichez le compte de stockage Azure que vous avez créé précédemment.
 2. Sélectionnez l’onglet **Explorateur de stockage** (dans le volet de gauche) pour voir le compte de stockage dans l’interface de l’Explorateur de stockage du portail Azure.
-2. Développez **Conteneurs d’objets blob** pour voir les conteneurs dans le compte de stockage. Outre le conteneur **Margie** dans lequel les données sources sont stockées, il doit y avoir deux nouveaux conteneurs : **margies-images** et **margies-knowledge**. Ceux-ci ont été créés par le processus d’indexation.
-3. Sélectionnez le conteneur **margies-knowledge**. Il doit contenir un dossier pour chaque document indexé.
-4. Ouvrez l’un des dossiers, puis téléchargez et ouvrez le fichier **knowledge-projection.js** qu’il contient. Chaque fichier JSON contient une représentation d’un document indexé, comprenant les données enrichies extraites par l’ensemble de compétences, comme indiqué ici.
+3. Développez **Conteneurs d’objets blob** pour voir les conteneurs dans le compte de stockage. Outre le conteneur **Margie** dans lequel les données sources sont stockées, il doit y avoir deux nouveaux conteneurs : **margies-images** et **margies-knowledge**. Ceux-ci ont été créés par le processus d’indexation.
+4. Sélectionnez le conteneur **margies-knowledge**. Il doit contenir un dossier pour chaque document indexé.
+5. Ouvrez l’un des dossiers, puis téléchargez et ouvrez le fichier **knowledge-projection.js** qu’il contient. Chaque fichier JSON contient une représentation d’un document indexé, comprenant les données enrichies extraites par l’ensemble de compétences, comme indiqué ici.
 
-```
+```json
 {
     "file_id":"abcd1234....",
     "file_name":"Margies Travel Company Info.pdf",
@@ -191,7 +191,7 @@ La possibilité de créer des projections d’*objets* de ce type vous permet de
 
 Les projections de *fichiers* définies dans l’ensemble de compétences créent des fichiers JPEG pour chaque image extraite des documents pendant le processus d’indexation.
 
-1. Dans l’interface de l’Explorateur de stockage du Portail Azure, sélectionnez le conteneur d’objets blob **margies-images**. Ce conteneur contient un dossier pour chaque document qui contenait des images.
+1. Dans l’interface *Navigateur de stockage* du Portail Azure, sélectionnez le conteneur d’objets blob **margies-images**. Ce conteneur contient un dossier pour chaque document qui contenait des images.
 2. Ouvrez l’un des dossiers et affichez son contenu : chaque dossier contient au moins un fichier \*.jpg.
 3. Ouvrez l’un des fichiers image pour vérifier qu’ils contiennent des images extraites des documents.
 
@@ -201,7 +201,7 @@ La capacité à générer des projections de *fichiers* comme celle-ci permet d�
 
 Les projections de *tables* définies dans l’ensemble de compétences forment un schéma relationnel de données enrichies.
 
-1. Dans l’interface de l’Explorateur de stockage du portail Azure, développez **Tables**.
+1. Dans l’interface *Navigateur de stockage* du Portail Azure, développez **Tables**.
 2. Sélectionnez la table **docs** pour voir ses colonnes. Les colonnes incluent des colonnes de table de stockage Azure standard. Pour les masquer, modifiez les **Options de colonne** pour sélectionner uniquement les colonnes suivantes :
     - **document_id** (colonne clé générée automatiquement par le processus d’indexation)
     - **file_id** (URL du fichier encodé)
