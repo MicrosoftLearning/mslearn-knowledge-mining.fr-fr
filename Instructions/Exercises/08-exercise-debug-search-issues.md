@@ -71,9 +71,11 @@ L’indexeur commence maintenant à ingérer 50 documents. Cependant, si vous e
 
 1. Définissez son **Niveau d’accès anonyme** sur **Conteneur (accès en lecture anonyme pour les conteneurs et les objets blob)**.
 
+    > **Remarque** : Il est possible que vous deviez activer les objets blob anonymes pour sélectionner cette option. Pour ce faire, dans le compte de stockage, accédez à **Configuration**, définissez **Autoriser l’accès anonyme aux objets blob** sur **Activé**, puis sélectionnez **Enregistrer**.
+
 1. Sélectionnez **Créer**.
 1. Sélectionnez votre nouveau conteneur dans la liste, puis sélectionnez **Sélectionner**.
-
+1. Sélectionnez **hotel-sample-indexer** pour le **Modèle d’indexeur**.
 1. Sélectionnez **Enregistrer la session**.
 
     Le graphe des dépendances vous montre une erreur sur trois compétences pour chaque document.
@@ -87,7 +89,7 @@ L’indexeur commence maintenant à ingérer 50 documents. Cependant, si vous e
 
     *Code de langue non valide « (Inconnu) ». Langues prises en charge : ar, cs, da, de, en, es, fi, fr, hu, it, ja, ko, nl, no, pl, pt-BR, pt-PT, ru, sv, tr et zh-Hans. Pour plus de détails, consultez https://aka.ms/language-service/language-support.*
 
-Si vous examinez le graphe des dépendances, la compétence Détection de langue a des sorties vers les trois compétences avec des avertissements. De plus, l’entrée de compétence à l’origine de l’erreur est `languageCode`.
+    Si vous examinez le graphe des dépendances, la compétence Détection de langue a des sorties vers les trois compétences avec des avertissements. De plus, l’entrée de compétence à l’origine de l’erreur est `languageCode`.
 
 1. Dans le graphe des dépendances, sélectionnez **Détection de langue**.
 
