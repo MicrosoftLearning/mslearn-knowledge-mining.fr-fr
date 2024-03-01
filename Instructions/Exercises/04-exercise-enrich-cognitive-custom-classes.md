@@ -31,7 +31,7 @@ Pour gagner du temps, sélectionnez ce modèle Azure ARM pour créer des ressour
 
     ![Capture d’écran des options affichées dans le cadre du déploiement de ressources vers Azure.](../media/04-media/deploy-azure-resources.png)
 1. Dans **Groupe de ressources**, sélectionnez **Créer**, nommez-le **cog-search-language-exe**.
-1. Dans **Région**, sélectionnez une [région prise en charge](/azure/ai-services/language-service/custom-text-classification/service-limits#regional-availability) proche de vous.
+1. Dans **Région**, sélectionnez une [région prise en charge](https://learn.microsoft.com/azure/ai-services/language-service/concepts/regional-support) proche de vous.
 1. Le **Préfixe de ressource** doit être globalement unique : entrez un préfixe constitué d’un nombre aléatoire et de caractères minuscules, par exemple **acs18245**.
 1. Dans **Emplacement**, sélectionnez la même région que celle que vous avez choisie ci-dessus.
 1. Sélectionnez **Revoir + créer**.
@@ -78,12 +78,13 @@ Cet exercice utilise 210 fichiers texte qui contiennent un résumé de l’intr
 
 1. Dans le [portail Azure](https://portal.azure.com/), sélectionnez **Groupes de ressources**, puis votre groupe de ressources.
 1. Sélectionnez le compte de stockage que vous avez créé, par exemple **acs18245str**.
+1. Sélectionnez **Configuration** dans le volet gauche, puis l’option **Activer** pour le paramètre *Autoriser l’accès anonyme aux objets blob*, enfin sélectionnez **Enregistrer** en haut de la page.
 
     ![Capture d’écran montrant comment créer un conteneur de stockage.](../media/04-media/select-azure-blob-storage.png)
+
 1. Sélectionnez **Conteneurs** à gauche, puis **+ Conteneur**.
 1. Dans le volet **Nouveau conteneur**, dans **Nom**, entrez **language-studio-training-data**.
-1. Dans **Niveau d’accès public**, choisissez **Conteneur (accès en lecture anonyme pour les conteneurs et les objets blob)**.
-1. Sélectionnez **Créer**.
+1. Dans **Niveau d’accès anonyme**, choisissez **Conteneur (accès en lecture anonyme pour les conteneurs et les objets blob)**, puis sélectionnez **Créer**.
 1. Sélectionnez le conteneur que vous venez de créer, **language-studio-training-data**.
     ![Une capture d’écran du chargement de fichiers dans le conteneur.](../media/04-media/upload-files.png)
 1. Sélectionnez **Charger** en haut du volet.
@@ -95,8 +96,8 @@ Cet exercice utilise 210 fichiers texte qui contiennent un résumé de l’intr
 ### Créer une ressource de langue
 
 1. Dans le lien de la barre de navigation en haut de la page, sélectionnez **Accueil**.
+1. Sélectionnez **+ Créer une ressource**, puis recherchez *Service de langage*.
 1. Sous **Service de langage**, sélectionnez **Créer**.
-1. Sélectionnez **Créer**.
 1. Sélectionnez l’option qui inclut **Classification de texte personnalisée et Reconnaissance d’entités nommées personnalisées**.
 
     ![Une capture d’écran montrant l’ajout de la fonction de classification de texte personnalisée.](../media/04-media/select-additional-features.png)
@@ -116,7 +117,7 @@ Cet exercice utilise 210 fichiers texte qui contiennent un résumé de l’intr
 
     ![Une capture d’écran montrant où sélectionner pour lancer Language Studio.](../media/04-media/started-language-studio.png)
 1. Faites défiler vers le bas dans le volet **Vue d’ensemble**, puis sélectionnez **Bien démarrer avec Language Studio**.
-1. Si vous êtes invité à choisir une ressource de langue, sélectionnez celle que vous avez créée.
+1. Connectez-vous au studio de langage. Si vous êtes invité à choisir une ressource de langue, sélectionnez celle que vous avez créée.
 
 ### Créer un projet de classification de texte personnalisée dans Language Studio
 
@@ -199,7 +200,7 @@ Créez un index de recherche que vous pouvez enrichir avec ce modèle : vous al
 1. Dans **Nom de la source de données**, entrez **movie-summaries**.
 1. Sélectionnez **Choisir une connexion existante**, sélectionnez votre compte de stockage, puis le conteneur que vous venez de créer, **search-data**.
 1. Sélectionnez **Ajouter des compétences cognitives (facultatif)**.
-1. Développez la section **Attacher AI Services**, puis sélectionnez le service Azure AI sous Gratuit.
+1. Développez la section **Attacher AI Services**, puis sélectionnez le service Azure AI créé plus tôt.
 
     ![Une capture d’écran montrant l’attachement des services Azure AI.](../media/04-media/attach-cognitive-services.png)
 1. Développez la section **Ajouter des enrichissements**.
@@ -221,7 +222,7 @@ L’indexeur s’exécute et crée un index des 210 fichiers texte. Vous n’av
 
 Vous allez maintenant créer une application de fonction Python que votre ensemble de compétences personnalisé de recherche cognitive va appeler. L’application de fonction va utiliser votre modèle de classifieur de texte personnalisé pour enrichir votre index de recherche.
 
-1. Dans le terminal, clonez ce dépôt GitHub sur votre machine.
+1. Ouvrez VScode, puis dans le terminal, clonez ce référentiel GitHub dans votre machine.
 
     ```bash
     git clone https://github.com/MicrosoftLearning/mslearn-doc-intelligence movie-genre-function
@@ -311,7 +312,7 @@ L’application de fonction doit être connectée à votre modèle de classifica
 
 Il existe un exemple de requête que vous pouvez utiliser pour tester que votre application de fonction et votre modèle classifieur fonctionnent correctement.
 
-1. Sur la gauche, sélectionnez **Explorateur**, développez le dossier **customtectcla**, puis sélectionnez **sample.dat**.
+1. Sur la gauche, sélectionnez **Explorateur**, développez le dossier **customtextcla**, puis sélectionnez **sample.dat**.
 
     ![Une capture d’écran montrant l’exemple de requête JSON.](../media/04-media/copy-sample-query.png)
 1. Copiez le contenu du fichier.

@@ -86,7 +86,7 @@ Maintenant que vous disposez des ressources requises, vous pouvez charger certai
 3. Enregistrez vos modifications, puis cliquez avec le bouton droit sur le dossier **01-azure-search** et ouvrez un terminal intégré.
 4. Entrez la commande suivante pour vous connecter à votre abonnement Azure à l’aide d’Azure CLI.
 
-    ```
+    ```powershell
     az login
     ```
 
@@ -94,7 +94,7 @@ Maintenant que vous disposez des ressources requises, vous pouvez charger certai
 
 5. Entrez la commande suivante pour exécuter le fichier de commandes. Cela crée un conteneur d’objets blob dans votre compte de stockage et charge les documents dans le dossier de **données** vers celui-ci.
 
-    ```
+    ```powershell
     UploadDocs
     ```
 
@@ -243,7 +243,7 @@ Bien que vous puissiez utiliser le portail pour créer et modifier des solutions
 4. Dans Visual Studio Code, dans **skillset.json**, remplacez l’espace réservé **YOUR_COGNITIVE_SERVICES_KEY** par la clé Azure AI Services que vous avez copiée dans le presse-papiers.
 5. Faites défiler le fichier JSON en notant qu’il inclut des définitions pour les compétences que vous avez créées à l’aide de l’interface utilisateur de Recherche Azure AI dans le Portail Azure. En bas de la liste des compétences, une compétence supplémentaire a été ajoutée avec la définition suivante :
 
-    ```
+    ```json
     {
         "@odata.type": "#Microsoft.Skills.Text.V3.SentimentSkill",
         "defaultLanguageCode": "en",
@@ -279,7 +279,7 @@ Bien que vous puissiez utiliser le portail pour créer et modifier des solutions
 2. Faites défiler l’index et affichez les définitions de champ. Certains champs sont basés sur les métadonnées et le contenu dans le document source, et d’autres sont les résultats des compétences dans l’ensemble de compétences.
 3. À la fin de la liste des champs que vous avez définis dans le portail Azure, notez que deux champs supplémentaires ont été ajoutés :
 
-    ```
+    ```json
     {
         "name": "sentiment",
         "type": "Edm.String",
@@ -306,19 +306,18 @@ Bien que vous puissiez utiliser le portail pour créer et modifier des solutions
 1. Dans Visual Studio Code, dans le dossier **modify-search**, ouvrez **indexer.json**. Cela montre une définition JSON pour **margies-indexer**, qui mappe les champs extraits du contenu et des métadonnées du document (dans la section **fieldMappings**) et les valeurs extraites par les compétences de l’ensemble de compétences (dans la section **outputFieldMappings** ), aux champs dans l’index.
 2. Dans la liste **fieldMappings**, notez le mappage de la valeur **metadata_storage_path** au champ clé codé en base 64. Cela a été créé lorsque vous avez affecté le **metadata_storage_path** en tant que clé et sélectionné l’option pour encoder la clé dans le portail Azure. En outre, un nouveau mappage mappe explicitement la même valeur au champ **url**, mais sans le codage en base 64 :
 
-    ```
+    ```json
     {
         "sourceFieldName" : "metadata_storage_path",
         "targetFieldName" : "url"
-    }
-    
+    }    
     ```
 
     Tous les autres champs de métadonnées et de contenu du document source sont implicitement mappés aux champs du même nom dans l’index.
 
 3. Passez en revue la section **ouputFieldMappings**, qui mappe les sorties des compétences de l’ensemble de compétences aux champs d’index. La plupart de ces choix reflètent les choix que vous avez effectués dans l’interface utilisateur, mais le mappage suivant a été ajouté pour mapper la valeur **sentimentLabel** extraite par votre compétence de sentiment au champ de **sentiment** que vous avez ajouté à l’index :
 
-    ```
+    ```json
     {
         "sourceFieldName": "/document/sentimentLabel",
         "targetFieldName": "sentiment"
@@ -330,7 +329,7 @@ Bien que vous puissiez utiliser le portail pour créer et modifier des solutions
 1. Cliquez avec le bouton droit de la souris sur le dossier **modify-search** et ouvrez un terminal intégré.
 2. Dans le volet terminal du dossier **modify-search**, entrez la commande suivante pour exécuter le script **modify-search.cmd**, qui soumet les définitions JSON à l’interface REST et lance l’indexation.
 
-    ```
+    ```powershell
     ./modify-search
     ```
 

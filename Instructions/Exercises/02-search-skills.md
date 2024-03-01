@@ -39,14 +39,14 @@ Vous allez développer votre application de recherche en utilisant Visual Studio
 1. Cliquez avec le bouton droit sur le dossier **02-search-skill**, puis sélectionnez **Ouvrir dans le terminal intégré**.
 1. Dans le volet Terminal, entrez la commande suivante pour établir une connexion authentifiée à votre abonnement Azure.
 
-    ```
+    ```powershell
     az login --output none
     ```
 
 8. Quand vous y êtes invité, sélectionnez ou connectez-vous à votre abonnement Azure. Revenez ensuite à Visual Studio Code et attendez la fin du processus de connexion.
 9. Exécutez la commande suivante pour lister vos emplacements Azure.
 
-    ```
+    ```powershell
     az account list-locations -o table
     ```
 
@@ -54,7 +54,7 @@ Vous allez développer votre application de recherche en utilisant Visual Studio
 11. Dans le script **setup.cmd**, modifiez les déclarations de variables de **subscription_id**, **resource_group** et **location** avec les valeurs appropriées pour votre ID d’abonnement, le nom du groupe de ressources et le nom de l’emplacement. Ensuite, enregistrez vos modifications.
 12. Dans le terminal pour le dossier **02-search-skill**, entrez la commande suivante pour exécuter le script :
 
-    ```
+    ```powershell
     ./setup
     ```
 
@@ -109,7 +109,7 @@ Dans cet exercice, vous allez utiliser l’interface REST de Recherche Azure AI 
 14. Cliquez avec le bouton droit de la souris sur le dossier **create-search**, puis sélectionnez **Ouvrir dans le terminal intégré**.
 15. Dans le volet terminal du dossier **create-search** , entrez la commande suivante pour exécuter le script de commandes.
 
-    ```
+    ```powershell
     ./create-search
     ```
 
@@ -150,7 +150,7 @@ Pour implémenter la fonctionnalité de comptage de mots en tant que compétence
     - **Région** : * la même région que votre ressource Recherche Azure AI*
 
 2. Attendez la fin du déploiement, puis accédez à la ressource Function App déployée.
-3. Dans la page Vue d’ensemble de votre application de fonction, dans la section en bas de la page, sélectionnez l’onglet **Fonctions**. Créez ensuite une fonction dans le portail avec les paramètres suivants :
+3. Dans la page **Vue d’ensemble**, sélectionnez l’option **Créer dans Portail Azure** pour créer une fonction avec les paramètres suivants :
     - **Configurer un environnement de développement**
         - **Environnement de développement** : Développer dans le portail
     - **Sélectionner un modèle**
@@ -262,7 +262,7 @@ module.exports = async function (context, req) {
 6. Enregistrez la fonction, puis ouvrez le volet **Test/Exécution**.
 7. Dans le volet **Test/Exécution**, remplacez le paramètre **Body** existant par le code JSON suivant, qui reflète le schéma attendu par une compétence Recherche Azure AI dans laquelle les enregistrements contenant des données pour un ou plusieurs documents sont soumis pour traitement :
 
-    ```
+    ```json
     {
         "values": [
             {
@@ -284,10 +284,10 @@ module.exports = async function (context, req) {
         ]
     }
     ```
-    
+
 8. Cliquez sur **Exécuter** et affichez le contenu de la réponse HTTP retourné par votre fonction. Celui-ci reflète le schéma attendu par Recherche Azure AI lors de l’utilisation d’une compétence, dans laquelle une réponse est renvoyée pour chaque document. Dans ce cas, la réponse se compose de 10 termes au maximum dans chaque document, dans l’ordre décroissant de leur fréquence d’apparition :
 
-    ```
+    ```json
     {
         "values": [
         {
@@ -348,7 +348,7 @@ Vous devez maintenant inclure votre fonction en tant que compétence personnalis
 13. Cliquez avec le bouton droit de la souris sur le dossier **update-search**, puis sélectionnez **Ouvrir dans le terminal intégré**.
 14. Dans le volet terminal du dossier **update-search**  entrez la commande suivante pour exécuter le script de commandes.
 
-    ```
+    ```powershell
     ./update-search
     ```
 
