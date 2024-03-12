@@ -222,13 +222,8 @@ L’indexeur s’exécute et crée un index des 210 fichiers texte. Vous n’av
 
 Vous allez maintenant créer une application de fonction Python que votre ensemble de compétences personnalisé de recherche cognitive va appeler. L’application de fonction va utiliser votre modèle de classifieur de texte personnalisé pour enrichir votre index de recherche.
 
-1. Ouvrez VScode, puis dans le terminal, clonez ce référentiel GitHub dans votre machine.
-
-    ```bash
-    git clone https://github.com/MicrosoftLearning/mslearn-doc-intelligence movie-genre-function
-    ```
-
-1. Dans Visual Studio Code, ouvrez le dossier **movie-genre-function** que vous venez de cloner.
+1. [Téléchargez les fichiers requis](https://github.com/MicrosoftLearning/mslearn-knowledge-mining/raw/main/Labfiles/04-enrich-custom-classes/movie-genre-function.zip) et extrayez le dossier contenant tous les fichiers.
+1. Ouvrez Visual Studio Code et le dossier **movie-genre-function** que vous venez de télécharger.
 
     ![Une capture d’écran de Visual Studio Code montrant la boîte de dialogue d’application de fonction optimisée.](../media/04-media/optimize-visual-studio-code.png)
 1. Si vous avez installé toutes les extensions nécessaires, vous êtes invité à optimiser le projet. Sélectionnez **Oui**.
