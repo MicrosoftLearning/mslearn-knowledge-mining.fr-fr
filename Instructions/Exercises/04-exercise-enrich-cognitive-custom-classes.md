@@ -27,7 +27,7 @@ Pour gagner du temps, sélectionnez ce modèle Azure ARM pour créer des ressour
 
 ### Déployer un modèle ARM prédéfini
 
-1. [![Déployer dans Azure](../media/04-media/deploy-azure.svg)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FMicrosoftLearning%2Fmslearn-doc-intelligence%2Fmain%2Fcognitive-search%2Fazuredeploy.json) sélectionnez ce lien pour créer vos ressources de démarrage. Vous devrez peut-être copier et coller le [lien direct](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FMicrosoftLearning%2Fmslearn-doc-intelligence%2Fmain%2Fcognitive-search%2Fazuredeploy.json) dans votre barre de recherche.
+1. [![Déployer dans Azure](../media/04-media/deploy-azure.svg)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FMicrosoftLearning%2Fmslearn-knowledge-mining%2Fmain%2FLabfiles%2F04-enrich-custom-classes%2Fazuredeploy.json) sélectionnez ce lien pour créer vos ressources de démarrage. Vous devrez peut-être copier et coller le [lien direct](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FMicrosoftLearning%2Fmslearn-knowledge-mining%2Fmain%2FLabfiles%2F04-enrich-custom-classes%2Fazuredeploy.json) dans votre barre de recherche.
 
     ![Capture d’écran des options affichées dans le cadre du déploiement de ressources vers Azure.](../media/04-media/deploy-azure-resources.png)
 1. Dans **Groupe de ressources**, sélectionnez **Créer**, nommez-le **cog-search-language-exe**.
@@ -69,12 +69,9 @@ Cet exercice utilise 210 fichiers texte qui contiennent un résumé de l’intr
 },
 ```
 
-1. Téléchargez les [exemples de données](https://github.com/Azure-Samples/cognitive-services-sample-data-files/blob/master/language-service/Custom%20text%20classification/Custom%20multi%20classification%20-%20movies%20summary.zip) depuis GitHub et enregistrez-les localement sur votre machine.
+1. Accédez à **Labfiles/04-enrich-custom-classes** et extrayez le dossier **movies summary.zip** contenant tous les fichiers.
 
-    ![Une capture d’écran montrant où sélectionner pour télécharger l’échantillon de données zip.](../media/04-media/download-sample-data.png)
-1. Ouvrez le fichier **Custom multi classification - movies summary.zip**, puis extrayez le dossier contenant tous les fichiers.
-
-    > **Remarque**Vous allez utiliser ces fichiers pour entraîner un modèle dans Language Studio, et également indexer tous les fichiers dans Recherche cognitive Azure.
+    > **Remarque** Vous utilisez ces fichiers pour effectuer l’apprentissage d’un modèle dans Language Studio, et également indexer tous les fichiers dans Recherche Azure AI.
 
 1. Dans le [portail Azure](https://portal.azure.com/), sélectionnez **Groupes de ressources**, puis votre groupe de ressources.
 1. Sélectionnez le compte de stockage que vous avez créé, par exemple **acs18245str**.
@@ -89,7 +86,7 @@ Cet exercice utilise 210 fichiers texte qui contiennent un résumé de l’intr
     ![Une capture d’écran du chargement de fichiers dans le conteneur.](../media/04-media/upload-files.png)
 1. Sélectionnez **Charger** en haut du volet.
 1. Dans le volet **Charger l’objet blob**, sélectionnez **Parcourir les fichiers**.
-1. Accédez à l’emplacement où vous avez téléchargé les exemples de fichiers, puis sélectionnez tous les fichiers texte (`.txt`) et JSON (`.json`).
+1. Accédez à l’emplacement où vous avez extrait les exemples de fichiers, puis sélectionnez tous les fichiers texte (`.txt`) et json (`.json`).
 1. Sélectionnez **Charger** dans le volet.
 1. Fermez le volet **Charger un objet blob**.
 
@@ -99,11 +96,7 @@ Cet exercice utilise 210 fichiers texte qui contiennent un résumé de l’intr
 1. Sélectionnez **+ Créer une ressource**, puis recherchez *Service de langage*.
 1. Sous **Service de langage**, sélectionnez **Créer**.
 1. Sélectionnez l’option qui inclut **Classification de texte personnalisée et Reconnaissance d’entités nommées personnalisées**.
-
-    ![Une capture d’écran montrant l’ajout de la fonction de classification de texte personnalisée.](../media/04-media/select-additional-features.png)
 1. Sélectionnez **Continuer pour créer votre ressource**.
-
-    ![Une capture d’écran montrant les informations nécessaires à la création d’un service de langage.](../media/04-media/enter-language-service-information.png)
 1. Dans **Groupe de ressources**, choisissez **cog-search-language-exe**.
 1. Dans **Région**, sélectionnez la région que vous avez utilisée ci-dessus.
 1. Dans **Nom**, entrez **learn-language-service-for-custom-text**. Ce nom doit être globalement unique. Vous devrez peut-être ajouter des caractères ou des nombres aléatoires à la fin.
