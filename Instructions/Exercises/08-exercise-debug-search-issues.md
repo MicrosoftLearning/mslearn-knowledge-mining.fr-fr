@@ -15,7 +15,7 @@ Dans cet exercice, vous allez créer une solution Recherche Azure AI, importer d
 
 Avant de pouvoir utiliser une session de débogage, vous devez créer un service Recherche cognitive Azure.
 
-1. [![Bouton Déployer des ressources Azure.](../media/08-media/deploy-azure.svg)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure-Samples%2Fazure-search-knowledge-mining%2Fmaster%2Fazuredeploy.json) Sélectionnez ce bouton pour déployer toutes les ressources dont vous avez besoin dans le portail Azure.
+1. [Déployer des ressources sur Azure](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure-Samples%2Fazure-search-knowledge-mining%2Fmain%2Fazuredeploy.json) : sélectionnez ce lien pour déployer toutes les ressources dont vous avez besoin dans le portail Azure.
 
     ![Capture d’écran du modèle de déploiement arm avec des champs remplis.](../media/08-media/arm-template-deployment.png)
 
@@ -117,7 +117,7 @@ L’indexeur commence maintenant à ingérer 50 documents. Cependant, si vous e
 1. Vous devez maintenant faire en sorte que votre ensemble de compétences soit attaché à une ressource Azure AI Services, sans quoi vous allez atteindre le quota de base et l’indexeur va dépasser le délai d’expiration. Pour cela, sélectionnez **Ensembles de compétences** dans le volet gauche, puis sélectionnez votre **hotels-sample-skillset**.
 
     ![Capture d’écran montrant la liste des ensemble de compétences.](../media/08-media/update-skillset.png)
-1. Sélectionnez l’onglet **AI Services**, puis sélectionnez la ressource AI services dans la liste.
+1. Sélectionnez **Connecter le service IA**, puis sélectionnez la ressource de services IA dans la liste.
 
     ![Capture d’écran montrant la ressource Azure AI Services à attacher à l’ensemble de compétences.](../media/08-media/skillset-attach-service.png)
 1. Sélectionnez **Enregistrer**.
