@@ -39,7 +39,7 @@ La solution que vous allez créer pour Margie’s Travel nécessite les ressourc
 
 Si vous n’en avez pas encore dans votre abonnement, vous devez approvisionner une ressource **Azure AI Services**. Votre solution de recherche va l’utiliser pour enrichir les données dans le magasin de données avec des insights générés par IA.
 
-1. Revenez à la page d’accueil du Portail Azure, puis sélectionnez le bouton **&#65291;Créer une ressource**, recherchez *Azure AI Services*, puis créez une ressource **Azure AI Services** avec les paramètres suivants :
+1. Revenez à la page d’accueil du Portail Azure, puis sélectionnez le bouton **&#65291;Créer une ressource**, recherchez *Azure AI Services*, puis créez une ressource **Compte multiservice Azure AI Services** avec les paramètres suivants :
     - **Abonnement** : *votre abonnement Azure*
     - **Groupe de ressources** : * le même groupe de ressources que votre ressource Recherche Azure AI*
     - **Région** : * le même emplacement que votre ressource Recherche Azure AI*
@@ -460,6 +460,13 @@ L’application web inclut déjà du code pour traiter et afficher les résultat
     - **gratte-ciel** (observez que ce mot n’apparaît pas dans le contenu réel des documents, mais se trouve dans les *légendes d’image* et les *balises d’image* qui ont été générées pour les images dans certains documents).
     - **Désert de Mojave** (observez que ce terme est identifié comme un *emplacement* dans certains documents).
 10. Fermez l’onglet du navigateur contenant le site web Margie’s Travel et revenez à Visual Studio Code. Ensuite, dans le terminal Python du dossier **margies-travel** (où l’application dotnet ou flask est en cours d’exécution), entrez CTRL + C pour arrêter l’application.
+
+## Supprimer les ressources de l’exercice
+
+Maintenant que vous avez terminé l’exercice, supprimez toutes les ressources dont vous n’avez plus besoin. Supprimez les ressources Azure :
+
+1. Dans le **portail Azure**, sélectionnez Groupes de ressources.
+1. Sélectionnez le groupe de ressources dont vous n’avez pas besoin, puis **Supprimer le groupe de ressources**.
 
 ## Plus d’informations
 

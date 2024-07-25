@@ -216,6 +216,13 @@ Les projections de *tables* définies dans l’ensemble de compétences forment 
 
 La capacité de créer des projections de *tables* vous permet de créer des solutions d’analyse et de création de rapports qui interrogent le schéma relationnel, par exemple, à l’aide de Microsoft Power BI. Les colonnes clés générées automatiquement peuvent être utilisées pour joindre les tables dans des requêtes, par exemple pour retourner tous les emplacements mentionnés dans un document spécifique.
 
+## Supprimer les ressources de l’exercice
+
+Maintenant que vous avez terminé l’exercice, supprimez toutes les ressources dont vous n’avez plus besoin. Supprimez les ressources Azure :
+
+1. Dans le **portail Azure**, sélectionnez Groupes de ressources.
+1. Sélectionnez le groupe de ressources dont vous n’avez pas besoin, puis **Supprimer le groupe de ressources**.
+
 ## Plus d’informations
 
 Pour en savoir plus sur la création de bases de connaissances à l’aide de la plateforme Recherche Azure AI, consultez la [documentation Recherche Azure AI](https://docs.microsoft.com/azure/search/knowledge-store-concept-intro).

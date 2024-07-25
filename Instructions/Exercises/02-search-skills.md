@@ -28,7 +28,7 @@ Vous allez développer votre application de recherche en utilisant Visual Studio
 > **Remarque** : si vous avez déjà effectué l’exercice **[Créer une solution Recherche Azure AI](01-azure-search.md)** et que vous disposez toujours de ces ressources Azure dans votre abonnement, vous pouvez ignorer cette section et commencer à la section **Créer une solution de recherche**. Sinon, suivez les étapes ci-dessous pour provisionner les ressources Azure requises.
 
 1. Ouvrez le portail Azure à l’adresse `https://portal.azure.com` et connectez-vous avec le compte Microsoft associé à votre abonnement Azure.
-2. Dans la barre de recherche supérieure, recherchez *Azure AI services*, sélectionnez **Azure AI Services** et créez une ressource de compte multiservices Azure AI services avec les paramètres suivants :
+2. Dans la barre de recherche supérieure, recherchez *Azure AI Services*, sélectionnez **Compte multiservice Azure AI Services** et créez une ressource de compte multiservice Azure AI Services avec les paramètres suivants :
     - **Abonnement** : *votre abonnement Azure*
     - **Groupe de ressources** : *Choisissez ou créez un groupe de ressources. (Si vous utilisez un abonnement restreint, vous n’avez peut-être pas l’autorisation de créer un groupe de ressources. Dans ce cas, utilisez le groupe fourni.)*
     - **Région** : *Choisir parmi les régions disponibles géographiquement proches de vous*
@@ -371,6 +371,13 @@ Maintenant que vous avez un index, vous pouvez y effectuer des recherches.
     ```
 
     Cette requête récupère les champs **URL** et **top_words** pour tous les documents qui mentionnent *Las Vegas*.
+
+## Supprimer les ressources de l’exercice
+
+Maintenant que vous avez terminé l’exercice, supprimez toutes les ressources dont vous n’avez plus besoin. Supprimez les ressources Azure :
+
+1. Dans le **portail Azure**, sélectionnez Groupes de ressources.
+1. Sélectionnez le groupe de ressources dont vous n’avez pas besoin, puis **Supprimer le groupe de ressources**.
 
 ## Plus d’informations
 
