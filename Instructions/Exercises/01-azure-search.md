@@ -95,7 +95,7 @@ Maintenant que vous disposez des ressources requises, vous pouvez charger certai
 5. Entrez la commande suivante pour exécuter le fichier de commandes. Cela crée un conteneur d’objets blob dans votre compte de stockage et charge les documents dans le dossier de **données** vers celui-ci.
 
     ```powershell
-    UploadDocs
+    .\UploadDocs.cmd
     ```
 
 ## Indexer les documents
@@ -153,7 +153,7 @@ Maintenant que vous disposez des documents en place, vous pouvez créer une solu
     1. Extrait les champs de métadonnées des documents et le contenu de la source de données
     2. Exécute l’ensemble de compétences de compétences cognitives pour générer des champs enrichis supplémentaires
     3. Mappe les champs extraits à l’index.
-15. Dans la moitié inférieure de la page **Vue d’ensemble** de votre ressource Recherche Azure AI, affichez l’onglet **Indexeurs**, qui devrait montrer l’index **margies-indexer** nouvellement créé. Attendez quelques minutes, puis cliquez sur **&orarr; Actualiser** jusqu’à ce que l’**État** indique la réussite.
+15. Sur le côté gauche, consultez la page **Indexeurs**, qui devrait afficher le margies-indexer** nouvellement créé**. Attendez quelques minutes, puis cliquez sur **&orarr; Actualiser** jusqu’à ce que l’**État** indique la réussite.
 
 ## Rechercher l’index
 
