@@ -162,7 +162,7 @@ Vous pouvez rechercher et vérifier que les documents ont été ajoutés à l’
 
 ![Capture d’écran montrant l’index de recherche avec 100 000 documents.](../media/07-media/check-search-service-index.png)
 
-### Supprimer les ressources de l’exercice
+### Nettoyage
 
 Maintenant que vous avez terminé l’exercice, supprimez toutes les ressources dont vous n’avez plus besoin. Commencez par le code cloné sur votre ordinateur. Ensuite, supprimez les ressources Azure.
 

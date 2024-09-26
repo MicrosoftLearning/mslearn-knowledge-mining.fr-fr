@@ -56,7 +56,7 @@ Si vous n’en avez pas encore dans votre abonnement, vous devez approvisionner 
     - **Nom du compte de stockage** : *entrez un nom unique*
     - **Région** : *choisissez n’importe quelle région disponible*
     - **Performances** : standard
-    - **Réplication** : Stockage localement redondant (LRS)
+    - **Redondance** : stockage localement redondant (LRS)
     - Sous l’onglet **Avancé**, vérifiez que l’option *Autoriser l’activation de l’accès anonyme sur des conteneurs individuels* est cochée.
 2. Attendez la fin du déploiement, puis accédez à la ressource déployée.
 3. Dans la page **Vue d’ensemble**, notez l’**ID d’abonnement** : il identifie l’abonnement dans lequel le compte de stockage est provisionné.
@@ -231,7 +231,7 @@ Bien que vous puissiez utiliser le portail pour créer et modifier des solutions
 1. Dans le Portail Azure, revenez à la page **Vue d’ensemble** de votre ressource Recherche Azure AI. Puis, dans la section supérieure de la page, recherchez l’**URL** de votre ressource (qui ressemble à **https://resource_name.search.windows.net**) et copiez-la dans le presse-papiers.
 2. Dans Visual Studio Code, dans le volet Explorateur, développez le dossier **01-azure-search** et son sous-dossier **modify-search**, puis sélectionnez **modify-search.cmd** pour l’ouvrir. Vous allez utiliser ce fichier de script pour exécuter des commandes *cURL* qui envoient JSON à l’interface REST d’Azure AI Services.
 3. Dans **modify-search.cmd**, remplacez l’espace réservé **YOUR_SEARCH_URL** par l’URL que vous avez copiée dans le presse-papiers.
-4. Dans le Portail Azure, affichez la page **Clés** de votre ressource Recherche Azure AI et copiez la **Clé d’administration principale** dans le presse-papiers.
+4. Dans le Portail Azure, dans la section **Paramètres**, affichez la page **Clés** de votre ressource Recherche Azure AI et copiez la **Clé d’administration principale** dans le presse-papiers.
 5. Dans Visual Studio Code, remplacez l’espace réservé **YOUR_ADMIN_KEY** par la clé que vous avez copiée dans le presse-papiers.
 6. Enregistrez les modifications apportées à **modify-search.cmd** (mais ne l’exécutez pas encore !)
 
@@ -239,7 +239,7 @@ Bien que vous puissiez utiliser le portail pour créer et modifier des solutions
 
 1. Dans Visual Studio Code, dans le dossier **modify-search**, ouvrez **skillset.json**. Cela montre une définition JSON pour **margies-skillset**.
 2. En haut de la définition de l’ensemble de compétences, notez l’objet **cognitiveServices** qui est utilisé pour connecter votre ressource Azure AI Services à l’ensemble de compétences.
-3. Dans le Portail Azure, ouvrez votre ressource Azure AI Services (<u>pas</u> votre ressource Recherche Azure AI !) et affichez sa page **Clés**. Copiez ensuite la **Clé 1** dans le presse-papiers.
+3. Dans le portail Azure, ouvrez votre ressource Azure AI Services (et <u>non</u> votre ressource Recherche Azure AI !). Dans la section **Gestion des ressources**, affichez sa page **Clés et points de terminaison**. Copiez ensuite la **Clé 1** dans le presse-papiers.
 4. Dans Visual Studio Code, dans **skillset.json**, remplacez l’espace réservé **YOUR_COGNITIVE_SERVICES_KEY** par la clé Azure AI Services que vous avez copiée dans le presse-papiers.
 5. Faites défiler le fichier JSON en notant qu’il inclut des définitions pour les compétences que vous avez créées à l’aide de l’interface utilisateur de Recherche Azure AI dans le Portail Azure. En bas de la liste des compétences, une compétence supplémentaire a été ajoutée avec la définition suivante :
 
@@ -375,13 +375,13 @@ Maintenant que vous avez un index utile, vous pouvez l’utiliser à partir d’
     **C#**
 
     ```
-    dotnet add package Azure.Search.Documents --version 11.1.1
+    dotnet add package Azure.Search.Documents --version 11.6.0
     ```
 
     **Python**
 
     ```
-    pip install azure-search-documents==11.0.0
+    pip install azure-search-documents==11.5.1
     ```
 
 3. Affichez le contenu du dossier **margies-travel**, et notez qu’il contient un fichier pour les paramètres de configuration :
@@ -461,7 +461,7 @@ L’application web inclut déjà du code pour traiter et afficher les résultat
     - **Désert de Mojave** (observez que ce terme est identifié comme un *emplacement* dans certains documents).
 10. Fermez l’onglet du navigateur contenant le site web Margie’s Travel et revenez à Visual Studio Code. Ensuite, dans le terminal Python du dossier **margies-travel** (où l’application dotnet ou flask est en cours d’exécution), entrez CTRL + C pour arrêter l’application.
 
-## Supprimer les ressources de l’exercice
+## Nettoyage
 
 Maintenant que vous avez terminé l’exercice, supprimez toutes les ressources dont vous n’avez plus besoin. Supprimez les ressources Azure :
 
