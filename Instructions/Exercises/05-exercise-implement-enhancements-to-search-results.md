@@ -190,7 +190,7 @@ Cet hôtel a correspondu au terme « lake » dans le champ `HotelName` et au t
 
     Le score de recherche a augmenté, de **0,9433406** à **3,5707965**. Toutefois, tous les autres hôtels ont des scores calculés plus élevés. Cet hôtel figure maintenant en dernier dans les résultats.
 
-## Supprimer les ressources de l’exercice
+## Nettoyage
 
 Maintenant que vous avez terminé l’exercice, supprimez toutes les ressources dont vous n’avez plus besoin.
 

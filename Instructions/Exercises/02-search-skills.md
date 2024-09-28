@@ -141,22 +141,21 @@ Pour implémenter la fonctionnalité de comptage de mots en tant que compétence
 > **Remarque** : Dans cet exercice, vous allez créer une fonction de Node.JS simple à l’aide des fonctionnalités de modification de code dans le Portail Azure. Dans une solution de production, vous utilisez généralement un environnement de développement tel que Visual Studio Code pour créer une application de fonction dans votre langage préféré (par exemple C#, Python, Node.JS ou Java) et le publier sur Azure dans le cadre d’un processus de DevOps.
 
 1. Dans le portail Azure, dans la page **Accueil** , créez une ressource **Function App** avec les paramètres suivants :
+    - **Plan d’hébergement** : consommation
     - **Abonnement** : *Votre abonnement*
     - **Groupe de ressources** : * le même groupe de ressources que votre ressource Recherche Azure AI*
     - **Nom de l’application de fonction** : *Un nom unique*
-    - **Publier** : Code
     - **Pile d’exécution** : Node.js
     - **Version** : 18 LTS
     - **Région** : * la même région que votre ressource Recherche Azure AI*
+    - **Système d’exploitation** : Windows
 
 2. Attendez la fin du déploiement, puis accédez à la ressource Function App déployée.
-3. Dans la page **Vue d’ensemble**, sélectionnez l’option **Créer dans Portail Azure** pour créer une fonction avec les paramètres suivants :
-    - **Configurer un environnement de développement**
-        - **Environnement de développement** : Développer dans le portail
+3. Dans la page **Présentation**, sélectionnez **Créer une fonction** en bas de la page pour créer une fonction avec les paramètres suivants :
     - **Sélectionner un modèle**
-        - **Modèle** : Déclencheur HTTP
+        - **Modèle** : Déclencheur HTTP    
     - **Détails du modèle** :
-        - **Nouvelle fonction** : wordcount
+        - **Nom de la fonction** : wordcount
         - **Niveau d’autorisation** : Fonction
 4. Attendez que la fonction *wordcount* soit créée. Ensuite, dans sa page, sélectionnez l’onglet **Code + Test**.
 5. Remplacez le code de fonction par défaut par le code suivant :
@@ -372,7 +371,7 @@ Maintenant que vous avez un index, vous pouvez y effectuer des recherches.
 
     Cette requête récupère les champs **URL** et **top_words** pour tous les documents qui mentionnent *Las Vegas*.
 
-## Supprimer les ressources de l’exercice
+## Nettoyage
 
 Maintenant que vous avez terminé l’exercice, supprimez toutes les ressources dont vous n’avez plus besoin. Supprimez les ressources Azure :
 

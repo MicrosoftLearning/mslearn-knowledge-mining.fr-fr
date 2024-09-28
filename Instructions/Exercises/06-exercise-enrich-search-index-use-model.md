@@ -54,6 +54,7 @@ Vous allez maintenant créer un modèle de régression et l’entraîner avec un
 
     ![Capture d’écran montrant l’apparence correcte du pipeline, et le bouton Envoyer mis en surbrillance.](../media/06-media/submit-pipeline.png)
 1. Sélectionnez **De base** dans le volet **Configurer la tâche de pipeline**.
+   > Remarque : si vous aviez masqué le volet **Configurer la tâche du pipeline**, vous pouvez l’ouvrir à nouveau en sélectionnant **Configurer et envoyer**.
 1. Sélectionnez **Créer** sous le nom Expérience.
 1. Dans **Nom de la nouvelle expérience**, entrez **linear-regression-training**.
 1. Sélectionnez **Vérifier + envoyer**, puis **Envoyer**.
@@ -175,9 +176,9 @@ En principe, votre cluster d’inférence est maintenant prêt à être utilisé
 1. Sélectionnez **Déployer**, puis **Point de terminaison en temps réel**.
 
     ![Capture d’écran du volet Sélectionner un point de terminaison.](../media/06-media/04-select-endpoint.png)
-1. Pour **Nom**, entrez un nom unique, par exemple **car-evaluation-endpoint-1440637584**.
+1. Pour **Nom du point de terminaison**, entrez un nom unique, par exemple **car-evaluation-endpoint-1440637584**.
 1. Pour le **Type de calcul**, sélectionnez **Managé**.
-1. Pour le **Type d’authentification**, sélectionnez **Authentification basée sur une clé**.
+1. Dans **Type d’authentification**, sélectionnez **Basée sur une clé**.
 1. Sélectionnez **Suivant**, puis **Suivant**.
 1. Cliquez à nouveau sur **Suivant**.
 1. Dans le champ **Sélectionner un scrip de scoring pour l’inférence**, naviguez vers votre fichier `score.py` mis à jour, puis sélectionnez-le.
@@ -252,8 +253,8 @@ Vous créez ensuite un service Recherche cognitive et enrichissez un index avec 
 
     ![Capture d’écran montrant la sélection d’un compte de stockage dans le portail Azure.](../media/06-media/navigate-storage-account.png)
 1. Sélectionnez le compte de stockage, par exemple **amlforacsworks1440637584**.
-1. Sélectionnez **Configuration** sous **Paramètres**. Puis définissez **Autoriser l’accès anonyme aux blobs** sur **Activé**.
-1. Sélectionnez **Enregistrer**.
+1. Sélectionnez **Configuration** sous **Paramètres**. Définissez ensuite **Autoriser l’accès anonyme aux objets blob** sur **Activé**.
+1. Cliquez sur **Enregistrer**.
 1. Sous **Stockage des données**, sélectionnez **Conteneurs**. 
 1. Pour créer un conteneur pour y stocker les données d’index. sélectionnez **+ Conteneur**.
 1. Dans le volet **Nouveau conteneur**, dans **Nom**, entrez **docs-to-search**.
@@ -461,7 +462,7 @@ Vous allez maintenant remplacer l’enrichissement des noms de personne par l’
 
 ### Mettre à jour les mappages des champs de sortie
 
-1. Revenez au volet **Vue d’ensemble**, puis sélectionnez **Indexeurs**, enfin **azureblob-indexer**.
+1. Revenez au volet **Présentation**, puis sélectionnez **Indexeurs** et **azureblob-indexer**.
 1. Sélectionnez l’onglet **Définition d’indexeur (JSON)**, puis remplacez la valeur **outputFieldMappings** par :
 
     ```json
@@ -485,9 +486,9 @@ L’ensemble de compétences mis à jour ajoute désormais une valeur prédite a
 1. Sélectionnez **Recherche**.
 1. Faites défiler le contenu jusqu’en bas des résultats.
     ![Capture d’écran montrant le champ du prix de voiture prédit qui a été ajouté aux résultats de la recherche.](../media/06-media/test-results-search-explorer.png)
-Vous voyez normalement le champ `predicted_price`rempli.
+Vous voyez normalement le champ `predicted_price` rempli.
 
-## Supprimer les ressources de l’exercice
+## Nettoyage
 
 Maintenant que vous avez terminé l’exercice, supprimez toutes les ressources dont vous n’avez plus besoin. Supprimez les ressources Azure :
 

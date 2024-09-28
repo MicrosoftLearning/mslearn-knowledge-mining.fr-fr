@@ -74,3 +74,7 @@ Vous devez voir un code d’état de type **200** indiquant la réussite de votr
 1. Sélectionnez l’onglet **Corps** pour voir la réponse et visualiser les résultats.
 
 Vous devez voir un code d’état de type **200** qui indique une requête réussie.
+
+### Nettoyage
+
+Maintenant que vous avez terminé l’exercice, supprimez toutes les ressources dont vous n’avez plus besoin. Commencez par le code cloné sur votre ordinateur. Ensuite, supprimez les ressources Azure.
