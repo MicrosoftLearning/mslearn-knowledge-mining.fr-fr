@@ -127,8 +127,8 @@ Cet exercice utilise 210 fichiers texte qui contiennent un résumé de l’intr
 
 1. Dans **Nom**, entrez **movie-genre-classifier**.
 1. Dans **Langue principale du texte**, sélectionnez **Anglais (US)**.
-1. Dans **Description**, entrez **A model that can identify a movie genre from the summary** (Un modèle qui peut identifier le genre d’un film à partir du résumé).
 1. Sélectionnez **Oui, activer le jeu de données multilingue**.
+1. Dans **Description**, entrez **A model that can identify a movie genre from the summary** (Un modèle qui peut identifier le genre d’un film à partir du résumé).
 1. Cliquez sur **Suivant**.
 
     ![Capture d’écran montrant la sélection du conteneur contenant des exemples de données.](../media/04-media/choose-container.png)
@@ -485,7 +485,7 @@ Chaque document de l’index doit avoir un nouveau champ `textclass` où il est 
 
 Maintenant que vous avez terminé l’exercice, supprimez toutes les ressources dont vous n’avez plus besoin.
 
-### Supprimer les ressources de l’exercice
+### Nettoyage
 
 1. Dans le portail Azure, accédez à la page d’accueil et sélectionnez **Groupes de ressources**.
 1. Sélectionnez les groupes de ressources dont vous n’avez pas besoin, puis sélectionnez **Supprimer le groupe de ressources**.

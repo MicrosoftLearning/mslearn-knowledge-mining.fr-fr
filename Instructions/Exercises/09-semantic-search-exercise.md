@@ -13,7 +13,7 @@ Dans cet exercice, vous allez ajouter un classeur sémantique à un index, puis 
 
 1. Ouvrez le portail Azure et connectez-vous.
 1. Sélectionnez **Toutes les ressources** et votre service de recherche.
-1. Dans le volet de navigation, sélectionnez **Classeur sémantique (préversion)**.
+1. Dans le volet de navigation, sélectionnez **Classeur sémantique**.
 1. Dans **Disponibilité**, dans l’option **Gratuit**, sélectionnez **Sélectionner un plan**.
 
 ![Capture d’écran de la boîte de dialogue du classeur sémantique.](../media/semantic-search/semanticsearch.png)
