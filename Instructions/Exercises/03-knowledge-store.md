@@ -216,7 +216,7 @@ Les projections de *tables* définies dans l’ensemble de compétences forment 
 
 La capacité de créer des projections de *tables* vous permet de créer des solutions d’analyse et de création de rapports qui interrogent le schéma relationnel, par exemple, à l’aide de Microsoft Power BI. Les colonnes clés générées automatiquement peuvent être utilisées pour joindre les tables dans des requêtes, par exemple pour retourner tous les emplacements mentionnés dans un document spécifique.
 
-## Supprimer les ressources de l’exercice
+## Nettoyage
 
 Maintenant que vous avez terminé l’exercice, supprimez toutes les ressources dont vous n’avez plus besoin. Supprimez les ressources Azure :
 
