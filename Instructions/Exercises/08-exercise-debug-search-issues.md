@@ -15,7 +15,7 @@ Dans cet exercice, vous allez créer une solution Recherche Azure AI, importer d
 
 Avant de pouvoir utiliser une session de débogage, vous devez créer un service Recherche cognitive Azure.
 
-1. [Déployer des ressources sur Azure](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure-Samples%2Fazure-search-knowledge-mining%2Fmain%2Fazuredeploy.json) : sélectionnez ce lien pour déployer toutes les ressources dont vous avez besoin dans le portail Azure.
+1. [Déployer des ressources sur Azure](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FMicrosoftLearning%2Fmslearn-knowledge-mining%2Fmain%2FLabfiles%2F08-debug-search%2Fazuredeploy.json) : sélectionnez ce lien pour déployer toutes les ressources dont vous avez besoin dans le portail Azure.
 
     ![Capture d’écran du modèle de déploiement arm avec des champs remplis.](../media/08-media/arm-template-deployment.png)
 
