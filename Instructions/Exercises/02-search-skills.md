@@ -157,6 +157,9 @@ Pour implémenter la fonctionnalité de comptage de mots en tant que compétence
     - **Détails du modèle** :
         - **Nom de la fonction** : wordcount
         - **Niveau d’autorisation** : Fonction
+
+    > **Note** : si vous recevez une erreur de type « Création de fonction », actualisez la page. La ressource devrait alors avoir été créée comme prévu.
+
 4. Attendez que la fonction *wordcount* soit créée. Ensuite, dans sa page, sélectionnez l’onglet **Code + Test**.
 5. Remplacez le code de fonction par défaut par le code suivant :
 
