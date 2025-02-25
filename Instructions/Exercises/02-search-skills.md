@@ -146,9 +146,11 @@ Pour implémenter la fonctionnalité de comptage de mots en tant que compétence
     - **Groupe de ressources** : * le même groupe de ressources que votre ressource Recherche Azure AI*
     - **Nom de l’application de fonction** : *Un nom unique*
     - **Pile d’exécution** : Node.js
-    - **Version** : 18 LTS
+    - **Version** : 20 LTS
     - **Région** : * la même région que votre ressource Recherche Azure AI*
     - **Système d’exploitation** : Windows
+
+>**Note** : si la région où vous avez créé votre ressource Recherche Azure AI n’a pas de quota disponible pour le déploiement de votre ressource Function App, vous pouvez choisir une autre région où votre abonnement dispose d’un quota disponible pour le déploiement.
 
 2. Attendez la fin du déploiement, puis accédez à la ressource Function App déployée.
 3. Dans la page **Présentation**, sélectionnez **Créer une fonction** en bas de la page pour créer une fonction avec les paramètres suivants :
