@@ -35,20 +35,47 @@ Pour gagner du temps, sélectionnez ce modèle Azure Resource Manager afin de cr
     ![Capture d’écran de la section Clés d’un service de recherche.](../media/07-media/search-api-keys-exercise-version.png)
 1. Sur la gauche, sélectionnez **Clés**, puis copiez la **Clé d’administration primaire** dans le même fichier texte.
 
-## Télécharger un exemple de code à utiliser dans Visual Studio Code
+## Cloner le référentiel dans Cloud Shell
 
-Vous allez exécuter un exemple de code Azure à l’aide de Visual Studio Code. Les fichiers de code ont été fournis dans un référentiel GitHub.
+Vous allez développer votre code à l’aide de Cloud Shell à partir du portail Azure. Les fichiers de code de votre application ont été fournis dans un référentiel GitHub.
 
-1. Démarrez Visual Studio Code.
-1. Ouvrez la palette (Maj+CTRL+P) et exécutez une commande **Git : Cloner** pour cloner le référentiel `https://github.com/MicrosoftLearning/mslearn-knowledge-mining` vers un dossier local (peu importe quel dossier).
-1. Lorsque le référentiel a été cloné, ouvrez le dossier dans Visual Studio Code.
-1. Attendez que des fichiers supplémentaires soient installés pour prendre en charge les projets de code C# dans le référentiel.
+> **Conseil** : si vous avez déjà cloné le référentiel **mslearn-knowledge-mining** récemment, vous pouvez ignorer cette tâche. Dans le cas contraire, procédez comme suit pour le cloner dans votre environnement de développement.
 
-    > **Remarque** : si vous êtes invité à ajouter des ressources requises pour générer et déboguer, sélectionnez **Not Now** (Pas maintenant).
+1. Dans le portail Azure, cliquez sur le bouton **[\>_]** à droite de la barre de recherche, en haut de la page, pour créer un environnement Cloud Shell dans le portail Azure, puis sélectionnez un environnement ***PowerShell***. Cloud Shell fournit une interface de ligne de commande dans un volet situé en bas du portail Azure.
 
-1. Dans la navigation de gauche, développez le dossier **optimize-data-indexing/v11/OptimizeDataIndexing**, puis sélectionnez le fichier **appsettings.json**.
+    > **Remarque** : si vous avez déjà créé un Cloud Shell qui utilise un environnement *Bash*, basculez-le vers ***PowerShell***.
+
+1. Dans la barre d’outils Cloud Shell, dans le menu **Paramètres**, sélectionnez **Accéder à la version classique** (cela est nécessaire pour utiliser l’éditeur de code).
+
+    > **Conseil** : lorsque vous collez des commandes dans cloudshell, la sortie peut prendre une grande quantité de mémoire tampon d’écran. Vous pouvez effacer le contenu de l’écran en saisissant la commande `cls` pour faciliter le focus sur chaque tâche.
+
+1. Dans le volet PowerShell, entrez les commandes suivantes pour cloner le référentiel GitHub pour cet exercice :
+
+    ```
+    rm -r mslearn-knowledge-mining -f
+    git clone https://github.com/microsoftlearning/mslearn-knowledge-mining mslearn-knowledge-mining
+    ```
+
+1. Une fois le référentiel cloné, accédez au dossier contenant les fichiers de code de l’application :  
+
+    ```
+   cd mslearn-knowledge-mining/Labfiles/07-exercise-add-to-index-use-push-api/OptimizeDataIndexing
+    ```
+
+## Configuration de votre application
+
+1. À l’aide de la commande `ls`, vous pouvez afficher le contenu du dossier **OptimizeDataIndexing**. Notez qu’il contient un fichier `appsettings.json` pour les paramètres de configuration.
+
+1. Saisissez la commande suivante pour modifier le fichier de configuration fourni :
+
+    ```
+   code appsettings.json
+    ```
+
+    Le fichier s’ouvre dans un éditeur de code.
 
     ![Capture d’écran montrant le contenu du fichier appsettings.json.](../media/07-media/update-app-settings.png)
+
 1. Collez le nom de votre service de recherche et la clé d’administration primaire.
 
     ```json
@@ -60,30 +87,40 @@ Vous allez exécuter un exemple de code Azure à l’aide de Visual Studio Code.
     ```
 
     Le fichier de paramètres devrait ressembler à celui ci-dessus.
-1. Appuyez sur **Ctrl+S** pour enregistrer votre modification.
-1. Cliquez avec le bouton droit sur le dossier **OptimizeDataIndexing**, puis sélectionnez **Ouvrir dans le terminal intégré**.
+   
+1. Une fois que vous avez remplacé les espaces réservés, utilisez la commande **Ctrl+S** pour enregistrer vos modifications, puis utilisez la commande **Ctrl+Q** pour fermer l’éditeur de code tout en gardant la ligne de commande Cloud Shell ouverte.
 1. Ensuite, dans le terminal, entrez `dotnet run` et appuyez sur **Entrée**.
 
     ![Capture d’écran montrant l’application s’exécutant dans VS Code avec une exception.](../media/07-media/debug-application.png)
-La sortie indique que dans ce cas, la taille de lot la plus performante est de 900 documents. Le débit atteint est de 6,071 Mo par seconde.
+
+    La sortie indique que dans ce cas, la taille de lot la plus performante est de 900 documents, avec le taux de transfert le plus élevé (Mo/seconde).
+   
+    >**Note** : vos valeurs de taux de transfert peuvent être différentes de ce qui est affiché dans la capture d’écran. Toutefois, la taille de lot la plus performante doit toujours être la même. 
 
 ## Modifier le code pour implémenter le threading et une stratégie d’interruption et de nouvelle tentative
 
 Il existe un code commenté qui est prêt à modifier l’application pour utiliser des threads visant à charger des documents dans l’index de recherche.
 
-1. Vérifiez que vous avez sélectionné **Program.cs**.
+1. Entrez la commande suivante pour ouvrir le fichier de code de l’application cliente :
 
-    ![Capture d’écran de VS Code avec le fichier Program.cs.](../media/07-media/edit-program-code.png)
-1. Commentez les lignes 37 et 38 comme suit :
+    ```
+   code Program.cs
+    ```
+
+1. Commentez les lignes 38 et 39 comme suit :
 
     ```csharp
     //Console.WriteLine("{0}", "Finding optimal batch size...\n");
     //await TestBatchSizesAsync(searchClient, numTries: 3);
     ```
 
-1. Décommentez les lignes 44 à 48.
+1. Décommentez les lignes 41 à 49.
 
     ```csharp
+    long numDocuments = 100000;
+    DataGenerator dg = new DataGenerator();
+    List<Hotel> hotels = dg.GetHotels(numDocuments, "large");
+
     Console.WriteLine("{0}", "Uploading using exponential backoff...\n");
     await ExponentialBackoff.IndexDataAsync(searchClient, hotels, 1000, 8);
 
@@ -94,9 +131,10 @@ Il existe un code commenté qui est prêt à modifier l’application pour utili
     Le code qui contrôle la taille de lot et le nombre de threads est `await ExponentialBackoff.IndexDataAsync(searchClient, hotels, 1000, 8)`. La taille de lot est de 1 000 et les threads sont huit.
 
     ![Capture d’écran montrant tout le code modifié.](../media/07-media/thread-code-ready.png)
+
     Votre code devrait ressembler à celui ci-dessus.
 
-1. Enregistrez vos modifications et appuyez sur **CTRL**+**S**.
+1. Enregistrez les changements apportés.
 1. Sélectionnez votre terminal, puis appuyez sur n’importe quelle touche pour mettre fin au processus en cours d’exécution si ce n’est pas déjà fait.
 1. Exécutez `dotnet run` dans le terminal.
 
