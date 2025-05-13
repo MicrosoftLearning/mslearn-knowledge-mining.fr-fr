@@ -83,35 +83,35 @@ Le portail Azure part du principe que le premier champ du document a besoin d’
 
 1. En haut de la page, sélectionnez le service de recherche via le lien **advanced-search-service-12345 |Indexes**.
 1. Sélectionnez **Ensembles de compétences** sous Gestion de la recherche dans le volet gauche, puis sélectionnez **hotels-sample-skillset**.
-1. Modifiez le document JSON, remplacez la ligne 11 par :
+1. Modifiez le document JSON, remplacez la ligne 9 par :
 
     ```json
     "context": "/document/Description",
     ```
 
-1. Remplacez la langue par défaut par Anglais à la ligne 12 :
+1. Remplacez la langue par défaut par Anglais à la ligne 11 :
 
     ```json
     "defaultFromLanguageCode": "en",
     ```
 
-1. Remplacez le champ source à la ligne 18 par :
+1. Remplacez le champ source à la ligne 15 par :
 
     ```json
-    "source": "/document/Description"
+    "source": "/document/Description",
     ```
 
-1. Sélectionnez **Enregistrer**.
+1. Cliquez sur **Enregistrer**.
 1. En haut de la page, sélectionnez le service de recherche via le lien **advanced-search-service-12345 | Skillsets**.
 1. Dans le volet **Vue d’ensemble**, sélectionnez **Indexeurs**, puis **hotels-sample-indexer**.
-1. Sélectionnez **Définition d’indexeur (JSON)**.
-1. Remplacez le champ source à la ligne 21 par :
+1. Sélectionnez **Modifier le fichier JSON**.
+1. Remplacez le champ source à la ligne 20 par :
 
     ```json
     "sourceFieldName": "/document/Description/Description_pt",
     ```
 
-1. Sélectionnez **Enregistrer**.
+1. Cliquez sur **Enregistrer**.
 1. Sélectionnez **Réinitialiser**, puis **Oui**.
 1. Sélectionnez **Exécuter**, puis **Oui**.
 
