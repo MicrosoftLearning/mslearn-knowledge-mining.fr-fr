@@ -15,7 +15,7 @@ Dans cet exercice, vous allez cloner une solution C# existante et l’exécuter 
 
 Pour gagner du temps, sélectionnez ce modèle Azure Resource Manager afin de créer les ressources dont vous aurez besoin plus tard dans l’exercice :
 
-1. [Déployer des ressources sur Azure](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FMicrosoftLearning%2Fmslearn-knowledge-mining%2Fmain%2FLabfiles%2F07-exercise-add-to-index-use-push-api%20lab-files%2Fazuredeploy.json) : sélectionnez ce lien pour créer vos ressources Azure AI.
+1. [Déployer des ressources sur Azure](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FMicrosoftLearning%2Fmslearn-knowledge-mining%2Fmain%2FLabfiles%2F07-exercise-add-to-index-use-push-api%2Fazuredeploy.json) : sélectionnez ce lien pour créer vos ressources Azure AI.
     ![Capture d’écran des options affichées dans le cadre du déploiement de ressources vers Azure.](../media/07-media/deploy-azure-resources.png)
 1. Dans **Groupe de ressources**, sélectionnez **Créer**, nommez-le **cog-search-language-exe**.
 1. Dans **Région**, sélectionnez une [région prise en charge](/azure/ai-services/language-service/custom-text-classification/service-limits#regional-availability) proche de vous.
