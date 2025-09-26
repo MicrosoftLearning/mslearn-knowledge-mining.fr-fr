@@ -104,7 +104,7 @@ Le portail Azure part du principe que le premier champ du document a besoin d’
 1. Cliquez sur **Enregistrer**.
 1. En haut de la page, sélectionnez le service de recherche via le lien **advanced-search-service-12345 | Skillsets**.
 1. Dans le volet **Vue d’ensemble**, sélectionnez **Indexeurs**, puis **hotels-sample-indexer**.
-1. Sélectionnez **Modifier le fichier JSON**.
+1. Sélectionnez **Modifier JSON**.
 1. Remplacez le champ source à la ligne 20 par :
 
     ```json
